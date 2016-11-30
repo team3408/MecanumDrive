@@ -1,13 +1,15 @@
-#include <KCrsl.h>
 
+#include "WPILib.h"
+
+/*
+#include <KCrsl.h>
 #include <SPI.h>
 #include <SD.h>
 #include <Ethernet.h>
 #include <Servo.h>
 #include <EEPROM.h>
 #include <RobotOpen.h>
-
-
+*/
 
 /* I/O Setup */
 ROJoystick usb1(1);         // Joystick #1
