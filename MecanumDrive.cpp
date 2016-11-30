@@ -34,23 +34,23 @@ void setup()
  */
 void enabled() {
   // get desired translation and rotation, scaled to [-127..128] (0 neutral)
-  int x = usb1.leftX() - 127;
-  int y = (255 - usb1.leftY()) - 127;
-  int rotate = usb1.rightX() - 127;
+  float x = usb1.leftX() - 127.0;
+  float y = (255.0 - usb1.leftY()) - 127.0;
+  float rotate = usb1.rightX() - 127.0;
 
   // calculate wheel throttles
-  int lf = x + y + rotate;
-  int rf = x - y + rotate;
-  int lr = -x + y + rotate;
-  int rr = -x - y + rotate;
+  float lf = x + y + rotate;
+  float rf = x - y + rotate;
+  float lr = -x + y + rotate;
+  float rr = -x - y + rotate;
 
   // normalize wheel throttles
-  int maximum = max(max(abs(lf), abs(rf)), max(abs(lr), abs(rr)));
-  if (maximum > 127) {
-    lf = (lf / maximum) * 127;
-    rf = (rf / maximum) * 127;
-    lr = (lr / maximum) * 127;
-    rr = (rr / maximum) * 127;
+  float maximum = max(max(abs(lf), abs(rf)), max(abs(lr), abs(rr)));
+  if (maximum > 127.0) {
+    lf = (lf / maximum) * 127.0;
+    rf = (rf / maximum) * 127.0;
+    lr = (lr / maximum) * 127.0;
+    rr = (rr / maximum) * 127.0;
   }
 
   // Set PWMs, shifted back to [0..255]
