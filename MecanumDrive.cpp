@@ -27,7 +27,7 @@ void setup()
   /* Initiate comms */
   RobotOpen.begin(&enabled, &disabled, &timedtasks);
  /*RSl setup  values*/
- rsl.setup(0); // choses a DIO input to use
+ rsl.setup(0); // chooses a DIO input to use
 }
 
 
